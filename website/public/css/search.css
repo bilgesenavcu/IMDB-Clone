@@ -1,0 +1,44 @@
+.navbar .input-group {
+    flex-grow: 1;
+}
+
+.navbar .form-control {
+    width: 100%;
+}
+
+.navbar .input-group-prepend {
+    margin-right: 0;
+}
+
+.navbar .input-group .dropdown-toggle {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.navbar .input-group .form-control {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.list-group-item {
+    background-color: black !important;
+    border: none !important; /* Kenarlıkları kaldırır */
+    color: white !important; /* Yazı rengini beyaz yapar */
+}
+
+.list-group-item-action {
+    background-color: black !important;
+    color: white !important;
+    border: none !important;
+}
+
+.list-group-item .img-fluid {
+    border: none !important; /* Eğer resimlerin etrafında bir kenarlık varsa bunu da kaldırır */
+}
+
+.list-group-item:hover, .list-group-item:focus, .list-group-item:active {
+    background-color: black !important;
+    color: white !important;
+    border: none !important; /* Hover, Focus ve Active durumlarında da kenarlıkları kaldırır */
+    text-decoration: none !important; /* Link alt çizgisini kaldırır */
+}

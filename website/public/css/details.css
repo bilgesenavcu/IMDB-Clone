@@ -1,0 +1,95 @@
+.video-container {
+    max-width: 1500px; /* Video container'ının maksimum genişliğini ayarlayın */
+    height: auto; /* Video yüksekliğini otomatik olarak ayarlayın */
+    overflow: hidden; /* Videoyu saran div içinde taşmayı engeller */
+    margin-top: 150px;
+    float: left; /* Videoyu sola hizalar */
+}
+
+.video-container video {
+    width: 100%; /* Videonun container içinde tam genişlikte olmasını sağlar */
+    height: auto; /* Genişlik oranına göre yüksekliği otomatik olarak ayarlar */
+}
+
+.img-fluid {
+    margin-top: 150px; /* Resmi yukarıdan 20 piksel aşağı kaydırır */
+    max-width: 300px;
+    margin-left: 300px;
+    position: relative; /* Relative positioning */
+}
+
+.product-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Konteynerin tam genişliğini kapla */
+    color: white;
+}
+
+.product-name {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    font-size: 25px; /* Yazı büyüklüğü */
+    font-weight: bold;
+}
+
+.time-year {
+    position: absolute;
+    top: 60px;
+    left: 300px;
+    display: inline-block; /* Zaman ve yıl bilgilerini yan yana göster */
+}
+
+.rate {
+    position: absolute;
+    top: 20px;
+    left: 900px;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydamlık sağlar */
+    padding: 10px;
+    color: white;
+    text-align: right; /* Yazıyı sağa hizala */
+}
+
+.rate1 {
+    position: absolute;
+    top: 55px;
+    left: 920px;
+}
+
+.rate2 {
+    position: absolute;
+    top: 55px;
+    left: 950px;
+}
+
+.rate3 {
+    position: absolute;
+    top: 20px;
+    left: 1100px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.rate4 {
+    position: absolute;
+    top: 55px;
+    left: 1130px;
+    color: rgb(75, 153, 209); /* Yazı rengini mavi yap */
+    font-size: 15px;
+}
+
+.rate5 {
+    position: absolute;
+    top: 30px;
+    left: 1280px;
+    font-size: 15px;
+}
+
+.rate6 {
+    position: absolute;
+    top: 55px;
+    left: 1310px;
+    font-size: 15px;
+}

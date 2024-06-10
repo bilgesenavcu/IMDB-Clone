@@ -1,0 +1,201 @@
+
+
+.navbar {
+    background-color: #121212 !important;
+}
+
+
+#searchDropdown {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+
+.menu-text {
+    color: white; /* Metin rengini beyaz yapar */
+    margin-left: 5px; /* İkon ve metin arasına boşluk ekler */
+}
+
+.pro-image {
+    margin-right: 100px;
+}
+
+.custom-search-width {
+    width: 3500px; /* Bu değeri istediğiniz genişlik olarak değiştirebilirsiniz */
+}
+
+
+a {
+    color: white !important; /* !important ekleyerek diğer kuralı geçersiz kıl */
+    background-color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+body {
+    background-color: #000000; /* Siyah arka plan rengi */
+    color: #ffffff; /* Yazı rengini beyaz yaparak kontrastı sağla */
+}
+.container {
+    background-color: #000000; /* Container arka plan rengi */
+    color: #ffffff; /* Container yazı rengini beyaz yap */
+    
+}
+
+.slider .card {
+    background-color: #1a1a1a; /* Kart arka plan rengini koyulaştır */
+   
+}
+
+.slider .card-body {
+    width: 1000%; /* Card body'nin genişliğini %100 olarak ayarlar */
+    height: 50px; /* Card body'nin yüksekliğini otomatik olarak ayarlar */
+    padding: 20px; /* İstenilen dolguyu ayarlayabilirsiniz */
+}
+
+.custom-card {
+    width: 163px; /* İstediğiniz genişliği buradan belirleyebilirsiniz */
+}
+
+.slider .card img {
+    width: 120%;
+    height: 300px; /* Resim yüksekliğini ayarladık */
+    object-fit: cover; /* Resmi kaplamak için */
+}
+.slider .card-body h3 {
+    font-size: 12px; /* Yazı boyutunu küçülttük */
+}
+
+/* Slick Slider Custom Navigation */
+.slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover, .slick-next:hover,
+.slick-prev:focus, .slick-next:focus {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before, .slick-next:hover:before,
+.slick-prev:focus:before, .slick-next:focus:before {
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+    opacity: .25;
+}
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 40px;
+    line-height: 1;
+    opacity: .75;
+    color: white; /* Navigasyon oklarını beyaz yap */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev {
+    left: -25px;
+}
+[dir='rtl'] .slick-prev {
+    right: -25px;
+    left: auto;
+}
+.slick-next {
+    right: -25px;
+}
+[dir='rtl'] .slick-next {
+    right: auto;
+    left: -25px;
+}
+/* Resimler arasında boşluk bırakmak için */
+.slider .slick-slide {
+    margin: 0 10px; /* Sol ve sağa 10px boşluk bırak */
+}
+/* Sliderın containerına negatif margin ekleyerek kaydırma boşluklarını dengele */
+.slider {
+    margin-left: -15px;
+    margin-right: -15px;
+    
+}
+
+/* Trailer butonunun kenarlarını kaldırmak */
+.btn-trailer {
+    border-radius: 20px; /* Kenar yarıçapını ayarla */
+    border: none; /* Kenar çizgisini kaldır */
+   
+}
+
+
+.dropdown-menu {
+    background-color: black;
+}
+
+.dropdown-item:hover {
+    color: white; /* Mouse üzerine gelindiğinde rengi beyaz olarak koru */
+    background-color: rgba(255, 255, 255, 0.1); /* Mouse üzerine gelindiğinde arka plan rengini hafifçe değiştir */
+}
+
+.navbar .dropdown-menu {
+    z-index: 1050; /* Ensure it appears above other content */
+    
+}
+
+.navbar .dropdown-menu.show {
+    display: block;
+    
+}
+
+.navbar .input-group .dropdown-toggle::after {
+    margin-left: 0.25em; /* Adjust dropdown arrow spacing */
+}
+
+.navbar .input-group-prepend .dropdown-menu {
+    top: 70%; /* Align dropdown below the button */
+    left: 0;   /* Align dropdown with the button */
+}
+
+#suggestions {
+    display: none; /* Initially hidden */
+    position: absolute; /* Position absolutely within the container */
+    z-index: 1050; /* Ensure suggestions appear above other content */
+    background-color: white; /* Background color to match the form */
+    width: 100%; /* Full width to match the search bar */
+    border: 1px solid #ccc; /* Border to match the form */
+    max-height: 200px; /* Max height for the suggestions list */
+    overflow-y: auto; /* Scroll if the list is too long */
+    margin-top: 40px;
+}
+
+.suggestion-item {
+    cursor: pointer;
+    padding: 8px; /* Padding for each suggestion item */
+    border-bottom: 1px solid #ddd; /* Border for each item */
+}
+
+.suggestion-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <title>IMDB Clone</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+</head>
+<body>
+    <!-- Navbar Dahil Etme -->
+    <%- include("partials/nav") %>
+    
+    <div class="container mt-3">
+        <h1> <%= language === 'tr' ? 'Bu Hafta IMDb\'de En İyi 10' : 'Top 10 on IMDb this Week' %> </h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="slider">
+                    <% urunler.forEach(urun => { %>
+                        <div class="col mb-3">
+                            <div class="card custom-card" style="height: 100%;">
+                                <%- include("partials/product", urun) %>
+                                <!-- Watch List ve Trailer Butonları -->
+                                <div class="card-footer d-flex flex-column align-items-center">
+                                    <button class="btn btn-primary mb-2 watch-btn" style="background-color: rgb(30, 30, 30); border-radius: 20px; border-color: transparent; color: rgb(31, 109, 162);" onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor='grey'" data-urun-id="<%= urun.id %>">Watch List</button>
+                                    <a href="/trailer/<%= urun.id %>" class="btn btn-primary trailer-btn" style="background-color: transparent; border-color: transparent; border-radius: 20px; color: white;" onmouseover="this.style.color='lightgrey'" onmouseout="this.style.color='white'">Trailer</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .watch-btn {
+            width: 150px;
+        }
+    </style>
+    
+    <!-- Bootstrap JS ve Bağımlılıkları -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Dil Değiştirme Scripti -->
+    <script>
+        document.getElementById('en-btn').addEventListener('click', function() {
+            alert('Language switched to English');
+        });
+        document.getElementById('tr-btn').addEventListener('click', function() {
+            alert('Language switched to Turkish');
+        });
+
+        // Slider özelleştirmesi
+        $(document).ready(function(){
+            $('.slider').slick({
+                slidesToShow: 6,
+                slidesToScroll: 6,
+                infinite: false,
+                arrows: true,
+                dots: false,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            // Watch List butonuna tıklama olayı
+            $('.watch-btn').click(function() {
+                var urunId = $(this).data('urun-id');
+
+                $.get('/check-auth', function(data) {
+                    if (data.authenticated) {
+                        // Kullanıcı oturum açmış
+                        alert('Added to watchlist: ' + urunId);
+                        // Watchlist ekleme işlemini burada yapabilirsiniz
+                    } else {
+                        // Kullanıcı oturum açmamış
+                        window.location.href = '/login';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.movie-container').forEach(container => {
+                container.addEventListener('click', function() {
+                    window.location.href = container.dataset.href;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
