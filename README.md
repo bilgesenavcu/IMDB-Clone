@@ -1,7 +1,5 @@
 # IMDB-Clone
 
-# IMDB Clone
-
 ## Description:
 This is a slimmed-down version of the IMDB web application with basic functionalities such as searching for movies, logging in, viewing movie details, and adding movies to watchlists.
 
@@ -32,3 +30,13 @@ This is a slimmed-down version of the IMDB web application with basic functional
 
 ## Issues:
 - **Unable to Upload Trailers:** The trailers for the movies are fetched from my database in the `images` folder. However, due to GitHub's 24MB limit, I couldn't upload the trailers. The trailers are included in the video demonstrating the site and can be seen when running the project locally.
+- **Deployment Error on Azure:** While trying to deploy my application on Azure, I keep encountering the following error:
+    ```
+    The requested content does not exist.
+    HttpStatusCode: 404
+    ErrorCode: WebContentNotFound
+    RequestId : a9572aa1-601e-0064-0668-bb72fc000000
+    TimeStamp : 2024-06-10T19:03:18.1850917Z
+    ```
+
+I am working on resolving this issue to ensure that the deployment works smoothly.
